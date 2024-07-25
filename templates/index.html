@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Management</title>
+</head>
+<body>
+    <h1>Projects</h1>
+    <a href="{{ url_for('create_project') }}">Create New Project</a>
+    <ul>
+        {% for project in projects %}
+            <li>{{ project.name }} - <a href="{{ url_for('assign_task', project_id=loop.index0) }}">Assign Task</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
